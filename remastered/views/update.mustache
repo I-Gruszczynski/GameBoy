@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../assets/styles/style_user_panel.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/styles/navigation.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>Sklep</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="search__container">
+				<input type="text" class="search__input" placeholder=" Search" id="search_input" />
+			</div>
+			<div id="header_login">
+				<p>{{user.name}} | <a href="/user/update.php">Moje konto</a> | <a href="/user/logout.php">Wyloguj</a> <a href="#"><img
+                            src="../assets/images/cart_icon.png" width="33px" height="33px"
+                            style="vertical-align:middle" /></a></p>
+			</div>
+		</div>
+		<div class="navigator">
+
+			<!--LOGO-->
+			<div id="header_logo">
+				<img src="../assets/images/game-boy_white.png" width="70%" class="center" />
+			</div>
+
+			<!--NAV BAR-->
+			<div id="nav_bar">
+				<ul>
+					<li style="font-weight: 400"><a class="four" href="/index.php"><img src="../assets/images/glowna.png" width="12%"
+                                height="auto" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;home</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/search.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;przeglądaj&nbsp;</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/kategorie.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;kategorie&nbsp;</a></li>
+                    <li><a class="prom" href="/product/search.php"><img src="../assets/images/nowosci.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;promocje</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/promocje.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;nowości</a></li>
+                    <li><a class="four" href="#"><img src="../assets/images/onas.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;o nas</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+	<div class="main">
+		<div id="main_sliderbox">
+			<div id="naglowekStrony">
+				Moje konto
+			</div>
+			<div id="main_sliderbox_slider_slider">
+				<button class="zmianaStronBtn">Szczegóły konta</button>
+				<br>
+				<button class="zmianaStronBtn">Moje zamówienia</button>
+				<br>
+				<button class="zmianaStronBtn">Ustawienia konta</button>
+			</div>
+			<div id="main_sliderbox_slider" class="main_sliderbox_slider">
+				<div id="naglowek">
+					Szczegóły Konta
+
+				</div>
+
+				<div>
+					<div id="tytuly">
+						Dane osobowe
+					</div>
+
+					<div id="opis">
+						<i>Uzupełnij swój profil i zwiększ bezpieczeństwo dodając datę urodzenia oraz numer
+							telefonu.</i>
+
+					</div>
+
+					<div id="DaneOsobowe" class="inputsDiv">
+						<form method="post" action="update.php">
+							Imie i nazwisko
+							<br>
+							<input type="text" class="textBox" id="name" name="name" value="{{user.name}}">
+							<br>
+
+							Adres email
+							<br>
+							<input type="text" class="textBox" id="email" name="email" value="{{user.email}}">
+							<br>
+
+							Data urodzenia
+							<br>
+							<input type="text" placeholder="yyyy-mm-dd" class="textBox" id="birthday" name="birthday" value="{{user.birthday}}">
+							<br>
+
+							Numer telefonu
+							<br>
+							<input type="text" class="textBox"  name="phone" value="{{user.phone}}">
+							<br>
+
+							Aktualne hasło
+							<br>
+							<input type="password" class="textBox" id="verification"  name="verification">
+							<br>
+
+							{{#message}}
+							<p>{{message}}</p>
+							{{/message}}
+
+							<a href="#">
+								<div>
+									<button class="zmienButton" id="zmienJ" type="submit">Zmień</button>
+								</div>
+							</a>
+						</form>
+					</div>
+
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+					<div id="tytuly">
+						Hasło
+					</div>
+
+					<div id="opis">
+						<i>Zmień hasło dla swojego konta.</i>
+
+					</div>
+
+					<div id="Adresy" class="inputsDiv">
+						Stare hasło
+						<br>
+						<input type="password" class="textBox" id="verification" name="verification">
+						<br>
+
+						Aktualne hasło
+						<br>
+						<input type="password" class="textBox" id="password" name="password">
+						<button type="button" id="btnToggle" class="toggle">
+
+							<i id="togglePassword" class="fa fa-eye fa-lg"></i>
+
+						</button><br>
+
+						<button class="zmienButton" id="zmienD">Zmień</button>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+		const togglePassword = document.querySelector('#togglePassword');
+		const password = document.querySelector('#password');
+
+		togglePassword.addEventListener('click', function (e) {
+			// toggle the type attribute
+			const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+			password.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+
+	</script>
+	<script src="../assets/scripts/search_nav.js"></script>
+
+</body>
+
+</html>

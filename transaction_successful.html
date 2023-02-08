@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/transaction_successful.css" />
+	<title>Sklep</title>
+	<!-- Sprawdzanie statusu transakcji oraz zatwierdzanie płatności w systemie PayPal ~ Jakub -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	const parameters = new URLSearchParams(window.location.search);
+	if(parameters.has('token')) {
+		$.get('/api/purchase/capture.php', {
+			token: parameters.get('token')
+		}).fail(function() {
+			window.location = 'transaction_failed.html';
+		});
+	} else {
+		window.location = 'transaction_failed.html';
+	}
+	</script>
+</head>
+
+<body>
+	<header>
+		<div id="header_logo"> <img src="assets/images/game-boy_white.png" width="160px" height="60px" /> </div>
+		<div id="header_searchbar">
+			<input type="text" placeholder=" Search" id="header_searchbar_input" /> </div>
+		<div id="header_login">
+			<p><a href="#">Zaloguj się</a> | <a href="#">Zarejestruj</a> |
+				<a href="#"><img src="assets/images/cart_icon.png" width="20px" height="20px" style="vertical-align:middle" /></a>
+			</p>
+		</div>
+	</header>
+	<div style="clear: both;"></div>
+	<nav>
+		<div id="nav_bar">
+			<ul>
+				<li>
+					<a href="#"><img src="assets/images/glowna.png" width="20px" height="20px" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;home</a>
+				</li>
+				<li>
+					<a href="#"><img src="assets/images/kategorie.png" width="20px" height="20px" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;kategorie&nbsp;</a>
+				</li>
+				<li>
+					<a href="#"><img src="assets/images/promocje.png" width="20px" height="20px" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;promocje</a>
+				</li>
+				<li>
+					<a href="#"><img src="assets/images/nowosci.png" width="20px" height="20px" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;nowości</a>
+				</li>
+				<li>
+					<a href="#"><img src="assets/images/onas.png" width="20px" height="20px" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;o nas</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<main>
+		<div id="main_sliderbox">
+			<div id="transaction_successful">
+				<div id="transaction_successful_text">
+					<h1>Transakcja przebiegła pomyślnie !</h1>
+					<br>
+					<h2>Sprawdź swoje konto aby odebrać klucz produktu.</h2>
+					<br>
+					<div id="go_to_order"><a href="#">PRZEJDŹ DO ZAMÓWIEŃ</a></div>
+				</div>
+				<div id="transaction_successful_picture"> <img src="assets/images/celebrating.png" width="450px" height="450px"> </div>
+			</div>
+		</div>
+	</main>
+	<div style="clear: both;"></div>
+</body>
+
+</html>

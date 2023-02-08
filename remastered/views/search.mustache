@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../../style.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/styles/navigation.css" />
+  <title>Sklep</title>
+</head>
+
+<body>
+  <div class="container2">
+    <div class="header">
+      <div class="search__container">
+        <input type="text" class="search__input" placeholder=" Search" id="search_input" />
+      </div>
+      <div id="header_login">
+        {{#user}}
+          <p>{{user.name}} | <a href="/user/update.php">Moje konto</a> | <a href="/user/logout.php">Wyloguj</a> <a href="#"><img
+                      src="../assets/images/cart_icon.png" width="33px" height="33px"
+                      style="vertical-align:middle" /></a></p>
+          {{/user}}
+          {{^user}}
+          <p><a href="/user/login.php">Zaloguj się</a> | <a href="/user/register.php">Zarejestruj</a> | <a href="#"><img
+                      src="../assets/images/cart_icon.png" width="33px" height="33px"
+                      style="vertical-align:middle" /></a></p>
+          {{/user}}
+      </div>
+    </div>
+    <div class="navigator">
+
+      <!--LOGO-->
+      <div id="header_logo">
+        <img src="../assets/images/game-boy_white.png" width="70%" class="center" />
+      </div>
+
+      <!--NAV BAR-->
+      <div id="nav_bar">
+        <ul>
+          <li style="font-weight: 400"><a class="four" href="/index.php"><img src="../assets/images/glowna.png" width="12%"
+                      height="auto" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;home</a></li>
+          <li><a class="four" href="/product/search.php"><img src="../assets/images/search.png" width="12%" height="auto"
+                      style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;przeglądaj&nbsp;</a></li>
+          <li><a class="four" href="/product/search.php"><img src="../assets/images/kategorie.png" width="12%" height="auto"
+                      style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;kategorie&nbsp;</a></li>
+          <li><a class="prom" href="/product/search.php"><img src="../assets/images/nowosci.png" width="12%" height="auto"
+                      style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;promocje</a></li>
+          <li><a class="four" href="/product/search.php"><img src="../assets/images/promocje.png" width="12%" height="auto"
+                      style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;nowości</a></li>
+          <li><a class="four" href="#"><img src="../assets/images/onas.png" width="12%" height="auto"
+                      style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;o nas</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="main" id="content_page">
+      <div id="header_row">
+        <h1 class="title">Lista ofert</h1>
+        <div class="selectWrapper">
+          <select class="selectBox" name="cars" id="sort_order" onchange="changeSort();">
+            <option value="lowest" selected="selected">Najniższa cena</option>
+            <option value="highest">Najwyższa cena</option>
+          </select>
+        </div>
+      </div>
+      <div id="content_body">
+        <div id="search_results">
+          <div id="item">
+            <div id="image_wrapper">
+              <img src="../../images/elden_ring_cover.png" id="item_photo" />
+            </div>
+            <div id="text_wrapper">
+              <p class="title_p" id="name">Elder Ring</p>
+              <p class="title_p" id="date">Data premiery: 2021</p>
+              <p class="title_p" id="price">194 PLN</p>
+            </div>
+            <div id="button_wrapper">
+              <input type="button" id="product_btn" value="Przejdź" />
+            </div>
+          </div>
+        </div>
+        <div id="filters_section">
+          <p id="filters_title">Filtry</p>
+          <p class="filter_title">CENA</p>
+          <div id="priceRange">
+            <input class="priceInput" type="number" placeholder="od" id="priceFrom"> -
+            <input class="priceInput" type="number" placeholder="do" id="priceTo">
+          </div>
+          <p class="filter_title">ROK</p>
+          <div class="selectWrapper" id="yearWrapper">
+            <select id="year" name="year"></select>
+          </div>
+          <p class="filter_title" id="special_offers" onclick="searchSpecial();">OFERTY SPECJALNE</p>
+          <p class="filter_title">KATEGORIE</p>
+          <form id="genres">
+            <input type="radio" id="genre1" name="genre" value="Akcja">
+            <label for="genre1" class="input_p">Akcja</label><br>
+            <input type="radio" id="genre2" name="genre" value="Strategia">
+            <label for="genre2" class="input_p">Strategia</label><br>
+            <input type="radio" id="genre3" name="genre" value="Symulator">
+            <label for="genre3" class="input_p">Symulator</label><br>
+            <input type="radio" id="genre4" name="genre" value="Ekonomia">
+            <label for="genre4" class="input_p">Ekonomia</label><br>
+            <input type="radio" id="genre5" name="genre" value="Fantasy">
+            <label for="genre5" class="input_p">Fantasy</label><br>
+            <input type="radio" id="genre6" name="genre" value="Przygodowa">
+            <label for="genre6" class="input_p">Przygodowa</label><br>
+            <input type="radio" id="genre7" name="genre" value="Sportowa">
+            <label for="genre7" class="input_p">Sportowa</label><br>
+            <input type="radio" id="genre8" name="genre" value="Horror">
+            <label for="genre8" class="input_p">Horror</label><br>
+          </form>
+
+        </div>
+      </div>
+      <div id="page_selector"></div>
+      </main>
+      <div style="clear: both"></div>
+      <script src="../assets/scripts/search.js"></script>
+      <script src="../assets/scripts/search_nav.js"></script>
+    </div>
+</body>
+
+</html>

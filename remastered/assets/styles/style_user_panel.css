@@ -1,0 +1,299 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+
+
+body
+{
+    margin: 0;
+}
+header
+{
+    padding: 20px 40px 0px 40px;
+    background-color: #1F2326;
+    height: 80px;
+    width: 95.80%;
+}
+
+#header_searchbar_input
+{
+    border: 1px solid #1F2326;
+    border-radius: 20px;
+    width: 60%;
+    height: 30px;
+
+}
+#header_login
+{
+    width: 20%;
+    color: white;
+    float: left;
+    text-align: right;
+    margin: auto 0px;
+    font-size: 17px;
+}
+#header_login > p > a
+{
+    height: 30px;
+    margin: auto 0px;
+    text-decoration: none;
+    color: white;
+}
+
+
+#topic_label
+{
+	font-family:monospace;
+	font-size: 16px;
+}
+		
+
+
+#main_sliderbox
+{
+	
+    width: 90.94%;
+    height: 1080px;
+    background-color: #1F2326;
+    float: left;
+    color: white;
+}
+#main_sliderbox_slider
+{
+    float: left;
+	
+	margin-top: 1%;
+    width: 60%;
+    height: 820px;
+    background-color: #2D3339;
+    border-radius: 30px;
+   
+}
+
+#main_sliderbox_slider_slider
+{
+	float: left;
+	margin-left: 0%;
+	margin-top: 1%;
+    width: 40%;
+    height: 650px;
+    background-color: #1F2326;
+    border-radius: 30px;
+   
+}
+
+
+.favicon
+{
+	margin-left: 2px;
+	float: left;
+	height: 25px;
+	width: 26px;
+}
+.form_el
+{
+	background-color: #1F2326;
+	border-right: 0px;
+	border-bottom: 1px solid;
+	border-bottom-color: #D6DBDF;
+	color: white;
+	margin-top:30px;
+	margin-left:143px;
+	width: 322px;
+	font-family:monospace;
+}
+#create_account_button
+{
+
+	margin-top:50px;
+	margin-left:143px;
+	padding-top: 10px;
+	width: 330px;
+	height: 30px;
+	background-color: #667DB9;
+	border-radius: 15px;
+	
+}
+#login
+{
+	font-size: 15px;
+	font-family:monospace;
+	margin-top: 10px;
+	margin-left:143px;
+}
+::placeholder
+{
+	color: #ABB2B9;
+}
+
+	
+.toggle
+{
+    background: none;
+    border: none;
+    color: white;
+    
+    
+}
+.toggle:hover
+{
+    cursor: pointer;
+}
+
+#inputsDiv
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+.textBox
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #2A2E32;
+    border-width: 1px;
+    border-color: #A4A4A4;
+    color: white;
+    height: 20px;
+    border-style: groove;
+    
+
+}
+
+#DaneOsobowe
+{
+    float: left;
+    padding: 10px;
+    display: block;
+}
+
+#opis
+{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    margin-right: 90px;
+    margin-left: 95px;
+
+    font-size: 13px;
+}
+
+#Adresy
+{
+    float: left;
+    padding: 10px;
+}
+
+#naglowek
+{
+    font-size: 40px;
+    margin-top: 30px;
+    margin-left: 105px;
+    margin-bottom: 20px;
+}
+
+#tytuly
+{
+    margin-left: 105px;
+    margin-top: 30px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #aaa;
+}
+
+.zmienButton
+{
+    background-color: #B4CFFA;
+    height: 27px;
+    width: 80px;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+.zmienButton:hover
+{
+    cursor: pointer;
+
+}
+
+#naglowekStrony
+{
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+.zmianaStronBtn
+{
+    color: white;
+    padding: 10px;
+    height: 45px;
+    width: 300px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: #1F2326;
+}
+
+.zmianaStronBtn:hover
+{
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    height: 45px;
+    width: 300px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: #2D3339;
+}
+
+
+@media screen and (max-width: 1475px) {
+    .container {
+        grid-template-columns: 0 !important;
+}
+}
+
+@media screen and (max-width: 1075px) {
+    #main_sliderbox_slider_slider
+    {
+       display: none;  
+    }
+    
+}
+
+@media screen and (max-width: 1075px) {
+    #main_sliderbox_slider{
+
+        margin-left: 10%;
+        width: 90% !important;
+        
+      }
+
+}
+
+@media screen and (max-width: 705px) {
+    #opis
+    {
+        display: none;
+    }
+    #DaneOsobowe
+    {
+        margin-left: 30%;
+    }
+
+    #Adresy
+    {
+        margin-left: 30%;
+    }
+
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Sklep</title>
+</head>
+<body>
+    <header>
+        <div id="header_logo">
+            <img src ="images/game-boy_white.png" width="160px" height="60px"/>
+        </div>
+        <div id="header_searchbar">
+            <input type="text" placeholder=" Search" id="header_searchbar_input"/>
+        </div>
+        <div id="header_login">
+            <p><a href="login.html" id="login">Zaloguj się</a> | <a href="register.html">Zarejestruj</a> | <a href="#"><img src="images/cart_icon.png" width="20px" height="20px" style="vertical-align:middle"/></a></p>
+        </div>
+    </header>
+    <div style="clear: both;"></div>
+    <nav>
+        <div id="nav_bar">
+            <ul>
+                <li><a href="#"><img src="images/glowna.png" width="20px" height="20px" style="vertical-align:middle"/>&nbsp;&nbsp;&nbsp;home</a></li>
+                <li><a href="#"><img src="images/kategorie.png" width="20px" height="20px" style="vertical-align:middle"/>&nbsp;&nbsp;&nbsp;kategorie&nbsp;</a></li>
+                <li><a href="search_results/main.html"><img src="images/promocje.png" width="20px" height="20px" style="vertical-align:middle"/>&nbsp;&nbsp;&nbsp;promocje</a></li>
+                <li><a href="#"><img src="images/nowosci.png" width="20px" height="20px" style="vertical-align:middle"/>&nbsp;&nbsp;&nbsp;nowości</a></li>
+                <li><a href="#"><img src="images/onas.png" width="20px" height="20px" style="vertical-align:middle"/>&nbsp;&nbsp;&nbsp;o nas</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div id="main_sliderbox">
+            <div id="main_sliderbox_slider">
+                <div id="main_sliderbox_slider_game">
+                    <div id="main_sliderbox_slider_game_box">
+                        <h1>Elden Ring (2022)</h1>
+                        <p>Elden Ring to gra RPG akcji autorstwa japońskiego studia FromSoftware.</p>
+                        <input type="button" value="KUP">
+                    </div>
+                </div>
+                <div id="main_sliderbox_slider_else">
+                    <div class="main_sliderbox_slider_else_box" id="main_sliderbox_slider_else_box1">
+                        <img src="images/elden_ring_cover.png" width="80px" height="105px" style="float:left;"/>
+                        <div class="main_sliderbox_slider_else_box_text">
+                            <h2>Elden Ring</h2>
+                            <hr style="color: #FDFBC3;width:180px;background-color:#FDFBC3;height: 1px;">
+                        </div>
+                    </div>
+                    <div class="main_sliderbox_slider_else_box" id="main_sliderbox_slider_else_box2">
+                        <img src="images/dune_spice_wars_cover.jpg" width="80px" height="105px" style="float:left;"/>
+                        <div class="main_sliderbox_slider_else_box_text">
+                            <h2>Dune Spice Wars</h2>
+                            <hr style="color: #CD926A;width:180px;background-color:#CD926A;height: 1px;">
+                        </div>
+                    </div>
+                    <div class="main_sliderbox_slider_else_box" id="main_sliderbox_slider_else_box3">
+                        <img src="images/cyberpunk_2077_cover.jpg" width="80px" height="105px" style="float:left;"/>
+                        <div class="main_sliderbox_slider_else_box_text">
+                            <h2>Cyberpunk 2077</h2>
+                            <hr style="color: #FFFE02;width:180px;background-color:#FFFE02;height: 1px;">
+                        </div>
+                    </div>
+                    <div class="main_sliderbox_slider_else_box" id="main_sliderbox_slider_else_box4">
+                        <img src="images/the_witcher_3_cover.jpg" width="80px" height="105px" style="float:left;"/>
+                        <div class="main_sliderbox_slider_else_box_text">
+                            <h2>The Witcher 3</h2>
+                            <hr style="color: #CF2F3B;width:180px;background-color:#CF2F3B;height: 1px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main_offers">
+            <h1>Popularne produkty</h1>
+            <p>Zyskujące na popularności nowe gry i oprogramowanie.</p>
+            <div id="main_offers_arrows">
+            <button id="prevBtn" style="float: left;">
+                <img src="images/strzalka — lewo.png" width="58px" height="60px" style="vertical-align:middle"/>
+            </button>
+            <div id="main_offers_container">
+                <div id="main_offers_container_slider">
+                    <div class="main_offers_container_box" id="lastClone">
+                        <img src="images/cover6.jpg" width="178px" height="250px" style="border-radius:30px;"/>
+                        <h3>Watch Dogs</h3>
+                        <p>Cena: 100zł</p>
+                    </div>  
+                    <div class="main_offers_container_box">
+                        <img src="images/cover1.jpeg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Super Meat Boy</h3>
+                        <p>Cena: 40zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover2.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Cuphead</h3>
+                        <p>Cena: 75zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover3.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Rayman Legends</h3>
+                        <p>Cena: 50zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover4.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Fall Guys</h3>
+                        <p>Cena: 30zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover5.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Gears of War 4</h3>
+                        <p>Cena: 120zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover6.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Watch Dogs</h3>
+                        <p>Cena: 100zł</p>
+                    </div>
+                    <div class="main_offers_container_box"  id="firstClone">
+                        <img src="images/cover1.jpeg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Super Meat Boy</h3>
+                        <p>Cena: 40zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover2.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Cuphead</h3>
+                        <p>Cena: 75zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover3.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Rayman Legends</h3>
+                        <p>Cena: 50zł</p>
+                    </div>
+                    <div class="main_offers_container_box">
+                        <img src="images/cover4.jpg" width="178px"  height="250px" style="border-radius:30px;"/>
+                        <h3>Fall Guys</h3>
+                        <p>Cena: 30zł</p>
+                    </div>
+                </div>    
+                </div>             
+            <button id="nextBtn" style="float: left;">
+                <img src="images/strzalka — prawo.png" width="58px" height="60px" style="vertical-align:middle"/>
+            </button>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="main_offers_container2">
+                <h1>Kategorie</h1>
+                <p>Szeroki wybór kategorii.</p>
+                <div class="main_offers_container_box2">
+                    <p>Fabularne</p>
+                    <img src="images/story_game.png" width="100%" height="400px"/>
+                </div>
+                <div class="main_offers_container_box2">
+                    <p>Strzelanki</p>
+                    <img src="images/fps_game.png" width="100%" height="400px"/>
+                </div>
+                <div class="main_offers_container_box2">
+                    <p>Wyścigowe</p>
+                    <img src="images/racing_game.png" width="100%" height="400px"/>
+                </div>
+                <div class="main_offers_container_box2">
+                    <p>Sportowe</p>
+                    <img src="images/sport_game.png" width="100%" height="400px"/>
+                </div>
+            </div>
+        </div>
+        <div id="main_about">
+            <div id="main_about_header">
+                <h1>Co nas wyróżnia</h1>
+            </div>
+            <div id="main_about_container">
+                <div class="main_about_container_box">
+                    <img src="images/transaction.png" width="200px" height="200px"/>
+                    <h1>Bezpieczenstwo transakcji</h1>
+                </div>
+                <div class="main_about_container_box">
+                    <img src="images/support.png" width="200px" height="200px"/>
+                    <h1>Aktywny Support</h1>
+                </div>
+                <div class="main_about_container_box">
+                    <img src="images/price.png" width="200px" height="200px"/>
+                    <h1>Najniższe ceny</h1>
+                </div>
+                <div class="main_about_container_box">
+                    <img src="images/mail.png" width="200px" height="200px"/>
+                    <h1>Natychmiastowa wysyłka</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div style="clear: both;"></div>
+    <div id="footer">
+        <p>Właściciel serwisu: TERG S.A. Ul. Za Dworcem 1D, 77-400 Złotów; Spółka wpisana do Krajowego Rejestru Sądowego w Sądzie Rejonowym w Poznań-Nowe Miasto i Wilda w Poznaniu, IX Wydział Gospodarczy Krajowego Rejestru Sądowego pod nr KRS 0000427063, Kapitał zakładowy: 39 512 500 zł; NIP 767-10-04-218, REGON 570217011; Sprzedaż dla firm (B2B): dlabiznesu@me.pl INFOLINIA: 756 756 756</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

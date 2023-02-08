@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Produckt | Sklep</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header>
+            {{#user}}
+            <p>{{user.name}} | {{user.email}} | Moje konto | <a href="/user/logout.php">Wyloguj</a></p>
+            {{/user}}
+            {{^user}}
+            <p><a href="/user/login.php">Zaloguj</a> | <a href="/user/register.php">Zarejestruj</a></p>
+            {{/user}}
+        </header>
+        <main>
+            <p>{{product.title}}</p>
+            <p>{{product.subtitle}}</p>
+            <p>{{product.price}}</p>
+            <p>{{product.publisher}}</p>
+            {{#product.pictures}}
+            <img src="{{.}}">
+            {{/product.pictures}}
+        </main>
+    </body>
+</html>

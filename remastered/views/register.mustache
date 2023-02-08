@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../assets/styles/style_log_rej.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/styles/navigation.css" />
+	<title>Sklep Reg</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="search__container">
+				<input type="text" class="search__input" placeholder=" Search" />
+			</div>
+			<div id="header_login">
+				<p><a href="login.php">Zaloguj się</a> | <a href="register.php">Zarejestruj</a> | <a href="#"><img
+							src="../assets/images/cart_icon.png" width="33px" height="33px"
+							style="vertical-align:middle" /></a></p>
+			</div>
+		</div>
+		<div class="navigator">
+
+			<!--LOGO-->
+			<div id="header_logo">
+				<img src="../assets/images/game-boy_white.png" width="70%" class="center" />
+			</div>
+			
+			<!--NAV BAR-->
+			<div id="nav_bar">
+				<ul>
+					<li style="font-weight: 400"><a class="four" href="/index.php"><img src="../assets/images/glowna.png" width="12%"
+                                height="auto" style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;home</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/search.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;przeglądaj&nbsp;</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/kategorie.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;kategorie&nbsp;</a></li>
+                    <li><a class="prom" href="/product/search.php"><img src="../assets/images/nowosci.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;promocje</a></li>
+                    <li><a class="four" href="/product/search.php"><img src="../assets/images/promocje.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;nowości</a></li>
+                    <li><a class="four" href="#"><img src="../assets/images/onas.png" width="12%" height="auto"
+                                style="vertical-align:middle" />&nbsp;&nbsp;&nbsp;o nas</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main">
+		<div id="main_sliderbox">
+			<div id="main_sliderbox_slider" >
+				<div id="topic_label" class="topic_label">Rejestracja użytkownika </div>
+				<br>
+				<br>
+				<br>
+				<div id="form">
+					<form id="rejestracja" method="post" action="register.php">
+						<input id="name" type="text" class="form_el" placeholder="IMIE I NAZWISKO" name="name">
+						<br>
+						<input id="email" type="text" class="form_el" placeholder="ADRES EMAIL" name="email">
+						<br>
+						<input id="password" type="password" class="form_el" placeholder="HASŁO" name="password">
+						<button type="button" id="btnToggle" class="toggle"> <i id="togglePassword" class="fa fa-eye fa-lg"></i> </button>
+						<br>
+						<div id="captcha" class="g-recaptcha" data-sitekey="6LdSavsfAAAAAJHNP_HWLgQFcY98jf6KqiFWA0LI" data-theme="dark"></div>
+					</form>
+					<br>
+					{{#message}}
+                    <p id="demo">{{message}}</p>
+                    {{/message}}
+				</div>
+				<div id="main_button">
+					<a href="#" id="przycisk">
+						<div id="button"> ZAREJESTRUJ </div>
+					</a>
+				</div>
+				<div id="main_accounts">
+					<p id="account"><a>Masz juz konto?</a> <a href="login.php" id="registration">Zaloguj się</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+	</div>
+	
+	<script>
+	const togglePassword = document.querySelector('#togglePassword');
+	const password = document.querySelector('#password');
+	togglePassword.addEventListener('click', function(e) {
+		const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		password.setAttribute('type', type);
+		this.classList.toggle('fa-eye-slash');
+	});
+	document.querySelector('#przycisk').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#rejestracja').submit();
+    });
+	</script>
+	<script src="../assets/scripts/search_nav.js"></script>
+</body>
+
+</html>
